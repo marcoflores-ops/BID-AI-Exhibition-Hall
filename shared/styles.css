@@ -30,6 +30,7 @@
 .home-page .hero-deck{font-size:clamp(15px,1.55vw,23px);margin-top:11px}
 .home-motto{position:absolute;z-index:1;left:66.5%;top:clamp(88px,10.85vh,117px);display:grid;gap:4px;margin:0;color:#b0d3eb;font-size:clamp(11px,1.2vw,19px);font-weight:800;letter-spacing:.08em;line-height:1.16}
 .home-page .projects-grid{gap:clamp(12px,1vw,20px);padding:0 0 clamp(20px,2.4vh,26px)}
+.home-page .projects-grid{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr))}.home-page .project-tile{grid-column:span 3}.home-page .project-tile:nth-child(n+5){grid-column:span 4}
 .home-page .project-tile{border-radius:12px}
 .home-page .project-tile::after{background:linear-gradient(90deg,rgba(255,255,255,.99) 0%,rgba(255,255,255,.92) 37%,rgba(255,255,255,0) 91%)}
 .home-page .tile-copy{gap:clamp(7px,1.05vh,12px)}
@@ -45,7 +46,7 @@
 .home-page .station-note{bottom:7px}
 
 @media(max-height:760px) and (min-width:800px){.home-page .home-header{height:clamp(205px,29vh,245px)}.home-page .header-copy{margin-top:clamp(94px,14vh,120px)}.home-page .footer-nav{min-height:65px;padding-top:8px}.home-page .projects-grid{padding-bottom:12px}}
-@media(max-width:800px){.home-page .exhibition-screen{padding:18px;background-position:center top}.home-page .home-header{height:175px;padding:0 12px}.home-page .header-copy{margin-top:48px}.home-page .home-motto{display:none}.home-page .footer-nav{min-height:55px;padding:12px 0}.home-page .station-note{bottom:4px}}
+@media(max-width:800px){.home-page .exhibition-screen{padding:18px;background-position:center top}.home-page .home-header{height:175px;padding:0 12px}.home-page .header-copy{margin-top:48px}.home-page .home-motto{display:none}.home-page .projects-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none}.home-page .project-tile,.home-page .project-tile:nth-child(n+5){grid-column:span 1}.home-page .footer-nav{min-height:55px;padding:12px 0}.home-page .station-note{bottom:4px}}
 
 /* AquaData television receiver: the supplied 1920 × 1080 artwork remains
    undistorted and is never used as an interactive control. */
@@ -54,6 +55,8 @@
 .aquadata-display--cta{position:relative}.aqua-cta-overlay{position:absolute;inset:0;display:grid;place-items:center;padding:clamp(24px,4vw,72px);background:#0629573d}.aquadata-display--cta .aqua-cta-card{width:min(45vw,780px);padding:clamp(28px,3vw,56px);border-color:#a8ebffb3;background:#062957e8;box-shadow:0 22px 55px #001b3c78}.aquadata-display--cta .aqua-cta-card h1{font-size:clamp(31px,4.25vw,72px)}.aquadata-display--cta .aqua-cta-card span{font-size:clamp(16px,1.5vw,24px)}.aquadata-display--cta .aqua-cta-arrow{width:clamp(48px,4.2vw,75px);height:clamp(48px,4.2vw,75px);margin-top:clamp(18px,2vw,30px);font-size:clamp(31px,3vw,49px)}
 .aquadata-game-display{position:relative}.aqua-display-results{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);min-width:min(70vw,1040px);padding:clamp(22px,3vw,48px);border:2px solid #9fe8ff;background:#062957e9;border-radius:28px;color:#fff;text-align:center;box-shadow:0 24px 60px #001b3c88}.aqua-display-results small{display:block;color:#96e6ff;font-weight:900;letter-spacing:.13em;font-size:clamp(12px,1vw,18px)}.aqua-display-results span{display:flex;justify-content:center;align-items:center;gap:clamp(18px,3vw,52px);margin:clamp(12px,1.6vw,25px) 0}.aqua-display-results b{font-size:clamp(22px,2.7vw,47px)}.aqua-display-results i{color:#16b7f0;font-size:clamp(31px,4vw,68px);font-style:normal}.aqua-display-results em{color:#d8f5ff;font-size:clamp(15px,1.5vw,25px);font-style:normal}
 .aqua-game-mirror{background:#f2fbff}.aqua-game-mirror iframe{display:block;width:100%;height:100%;border:0;pointer-events:none}
+.crb-display{position:relative;width:100dvw;height:100dvh;display:grid;place-items:center;overflow:hidden;background:#effaff}.crb-display>img{width:100%;height:100%;object-fit:contain}.crb-display-cta{position:absolute;right:clamp(34px,5vw,110px);bottom:clamp(35px,7vh,110px);max-width:min(37vw,650px);padding:clamp(22px,2.7vw,48px);border:1px solid #b9edff;border-radius:24px;background:#062e67e8;box-shadow:0 20px 48px #06295775;color:#fff}.crb-display-cta p{margin:0 0 10px;color:#69e4ff;font-size:clamp(11px,1vw,17px);font-weight:900;letter-spacing:.13em}.crb-display-cta h1{margin:0;font-size:clamp(26px,3.1vw,57px);line-height:1.04}.crb-display-cta span{display:block;margin-top:13px;color:#d8f5ff;font-size:clamp(14px,1.35vw,22px);line-height:1.35}
+.guatiguara-display{width:100dvw;height:100dvh;overflow:hidden;background:#000;display:grid;place-items:center}.guatiguara-display>img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
 
 .aqua-display-progress{position:absolute;z-index:2;left:38.28%;top:78.05%;width:23.45%;height:1.85%;overflow:hidden;border-radius:99px;background:#e1f3fc}.aqua-display-progress i{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#079bdc,#36d6d2);animation:aqua-display-analysis-progress 3.1s ease-in-out forwards}@keyframes aqua-display-analysis-progress{to{width:100%}}
 
@@ -80,3 +83,55 @@
 @media(max-width:900px){.pulse-command{height:auto;min-height:100dvh;overflow:auto;padding:18px}.pulse-command-header{height:auto;flex-wrap:wrap}.pulse-command-brand{width:100%}.pulse-command-user{margin-right:auto}.pulse-dashboard,.pulse-outcome{height:auto;grid-template-columns:1fr}.pulse-map-panel{height:520px}.pulse-outcome{padding:35px 0}.pulse-player-screen{height:auto;grid-template-columns:1fr}.pulse-role-grid{grid-column:1/-1}.pulse-final-screen{height:auto;min-height:75dvh}.pulse-final-screen>div{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.pulse-command-clock,.pulse-command-score{min-width:52px}.pulse-command-user small{display:none}.pulse-role-grid,.pulse-action-grid{grid-template-columns:1fr}.pulse-hud{align-items:flex-start;flex-direction:column}.pulse-hud-meters{width:100%}.pulse-map-panel{height:420px}.pulse-outcome footer{grid-column:auto}.pulse-intro-card li{font-size:15px}}
 .pulse-mission:disabled{cursor:default;opacity:.58}
+
+/* PredictToDo map: OSM roads when online, with a local visual fallback.
+   The colored traffic overlay is driven by simulated game data, not live traffic. */
+.pulse-map-canvas{position:relative;flex:1;min-height:0;overflow:hidden;border-radius:16px;background:#0c1c2d}
+.pulse-map-canvas>.pulse-live-map,.pulse-map-canvas>.pulse-city-map{position:absolute;inset:0;width:100%;height:100%;min-height:0}
+.pulse-map-canvas>.pulse-live-map{z-index:1;background:#d9e3e8}
+.pulse-map-canvas>.pulse-city-map{z-index:2}
+.pulse-map-canvas.has-live-map>.pulse-city-map{display:none}
+.pulse-map-topline span small{display:block;margin-top:3px;color:#88afca;font-size:10px;font-weight:600;letter-spacing:.01em}
+.pulse-route-credit{position:absolute;z-index:3;left:8px;bottom:8px;padding:3px 5px;border-radius:4px;background:#fffdf1d9;color:#21425a;font:9px/1.2 Inter,Arial,sans-serif;pointer-events:none}
+.pulse-live-map .leaflet-tile{filter:saturate(.72) contrast(1.05) brightness(.94)}
+.pulse-live-map .leaflet-control-attribution{padding:2px 5px;background:#f4fbffdd;color:#18344d;font:9px/1.3 Inter,Arial,sans-serif}
+.pulse-live-map .leaflet-control-attribution a{color:#15558b}
+.pulse-live-map-tooltip{padding:5px 8px;border:0;border-radius:8px;background:#10233feF;color:#fff;box-shadow:0 2px 8px #0008;font:700 11px/1.2 Inter,Arial,sans-serif}
+.pulse-live-map-tooltip::before{border-top-color:#10233feF}
+.pulse-city-map--gps{background:#081d2e;box-shadow:inset 0 0 0 1px #254965}
+.pulse-satellite-base{opacity:.98;filter:saturate(.82) contrast(1.14) brightness(.86)}
+.pulse-satellite-tint{fill:#06182a;opacity:.18}
+.pulse-city-boundary{fill:#0b29451c;stroke:#b2d9e955;stroke-width:1.5;stroke-dasharray:4 9}
+.pulse-city-grid{fill:url(#pulse-city-grid);opacity:.28}
+.pulse-waterway{fill:none;stroke:#0b6b8e;stroke-width:7;opacity:.65}
+.pulse-waterway--east{stroke:#0a4f6f;opacity:.42}
+.pulse-secondary-streets{fill:none;stroke:#d8ecf64a;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.pulse-residential-streets{fill:none;stroke:#d6ecfa63;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.75}
+.pulse-road-underlay{fill:none;stroke:#071622d9;stroke-width:17;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px #000c)}
+.pulse-city-map--gps .pulse-road{fill:none;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 3px #000b)}
+.pulse-city-map--gps .pulse-road--cali,.pulse-city-map--gps .pulse-road--nqs{stroke-width:10}
+.pulse-city-map--gps .pulse-road--connector{stroke-width:5;opacity:.9}
+.pulse-city-map--gps .pulse-road.normal{stroke:#35d3a9}
+.pulse-city-map--gps .pulse-road.busy{stroke:#f7cb58}
+.pulse-city-map--gps .pulse-road.dense{stroke:#ff9646}
+.pulse-city-map--gps .pulse-road.critical{stroke:#ff5c69}
+.pulse-map-zone{fill:#82a0b8;opacity:.62;font-size:10px;font-weight:800;letter-spacing:1.8px}
+.pulse-road-label rect,.pulse-event-tag rect{fill:#061624e8;stroke:#5a88a5;stroke-width:1}
+.pulse-road-label text{fill:#e5f4ff;font-size:10px;font-weight:800}
+.pulse-map-north path{fill:#72c9f5}
+.pulse-map-north text{fill:#dff4ff;font-size:11px;font-weight:900}
+.pulse-route-shadow{fill:none;stroke:#071522e6;stroke-width:18;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 2px 4px #000b)}
+.pulse-route-line{fill:none;stroke:#5d73ff;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 4px #4b66ff8c)}
+.pulse-route-start{fill:#20baf1;stroke:#e8fbff;stroke-width:3}
+.pulse-route-arrow{fill:#fff}
+.pulse-route-destination{fill:#ff5171;stroke:#fff;stroke-width:3}
+.pulse-route-destination-core{fill:#fff}
+.pulse-route-card rect{fill:#071827e8;stroke:#a7d9f080;stroke-width:1}
+.pulse-route-card circle{fill:#32c7f3}.pulse-route-card path{fill:#fff}
+.pulse-route-card text:first-of-type{fill:#f6fbff;font-size:10px;font-weight:850}
+.pulse-route-card text+text{fill:#b7d3e4;font-size:8.5px;font-weight:700}
+.pulse-event-marker circle:first-child{fill:#ff4669;opacity:.35;animation:pulse-event 1.8s infinite}
+.pulse-event-marker circle:last-child{fill:#fff;stroke:#ff5c69;stroke-width:7}
+.pulse-event-tag text{fill:#eff8ff;font-size:10px;font-weight:800}
+.pulse-event-tag text+text{fill:#a5c3db;font-size:9px;font-weight:600}
+.pulse-map-attribution{fill:#89a9bf;font-size:9px;font-weight:600;letter-spacing:.05em}

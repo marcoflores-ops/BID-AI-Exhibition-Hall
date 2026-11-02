@@ -52,7 +52,9 @@ window.ProjectModule={
     function render(){
       if(state.mode==='landing')mount.innerHTML=landing();
       else if(!gameData)mount.innerHTML=`<main class="pulse-command pulse-command--loading"><p>${words().loading}</p></main>`;
-      else mount.innerHTML=window.PULSE_VIAL.render({data:gameData,game:state.game,language:state.language});
+      else {
+        window.PULSE_VIAL.renderInto(mount,{data:gameData,game:state.game,language:state.language});
+      }
       bind();
     }
     function updateGame(next){setState({game:{...state.game,...next}});}
@@ -100,7 +102,17 @@ window.ProjectModule={
         updateGame({scenarioIndex,hour:scenario.hour,actionId:null});
       }));
       mount.querySelectorAll('[data-action-choice]').forEach(button=>button.addEventListener('click',()=>updateGame({actionId:button.dataset.actionChoice})));
-      mount.querySelector('[data-hour]')?.addEventListener('input',event=>updateGame({hour:Number(event.target.value)}));
+      mount.querySelector('[data-hour]')?.addEventListener('input',event=>{
+        state.game={...state.game,hour:Number(event.target.value)};
+        const hourLabel=String(state.game.hour).padStart(2,'0')+':00';
+        const clock=mount.querySelector('.pulse-command-clock strong');
+        const timeline=mount.querySelector('.pulse-timeline>span b');
+        if(clock)clock.textContent=hourLabel;
+        if(timeline)timeline.textContent=hourLabel;
+        window.PULSE_VIAL.mountLiveMap(mount,{data:gameData,game:state.game,language:state.language});
+        void publish();armIdle();
+      });
+      mount.querySelector('[data-hour]')?.addEventListener('change',()=>render());
       mount.querySelector('[data-name]')?.addEventListener('input',event=>{
         state.game={...state.game,playerName:event.target.value.slice(0,40)};
         void publish();
